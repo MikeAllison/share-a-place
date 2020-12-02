@@ -5,7 +5,6 @@ module.exports = {
   mode: 'development',
   entry: {
     'SharePlace': './src/SharePlace.js',
-    'MyPlace': './src/MyPlace.js',
   },
   output: {
     filename: '[name].js',

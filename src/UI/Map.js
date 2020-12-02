@@ -14,10 +14,12 @@ export class Map {
       zoom: 19
     });
 
-    new google.maps.Marker({
+    const marker = new google.maps.Marker({
       position: { lat: lat, lng: lng },
       map,
       title: 'My Location',
     });
+
+    return marker;
   }
 }

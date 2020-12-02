@@ -5,7 +5,6 @@ module.exports = {
   mode: 'production',
   entry: {
     'share-place': './src/SharePlace.js',
-    'my-place': './src/MyPlace.js',
   },
   output: {
     filename: '[name].[contenthash].js',

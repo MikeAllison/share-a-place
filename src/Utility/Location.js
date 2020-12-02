@@ -1,4 +1,4 @@
-const GOOGLE_API_KEY = 'AIzaSyB-Jd6-4_SHNPnW9GVlPUwl2vzQu61dvPY';
+const GOOGLE_API_KEY = 'AIzaSyD3vf8qA-lCeUztreges_aDi8BqmLTPyzM';
 
 export async function getCoordsFromAddress(address) {
   const urlAddress = encodeURI(address);
@@ -6,8 +6,13 @@ export async function getCoordsFromAddress(address) {
   
   if (!response.ok) {
     throw new Error(response.status);
-  } else {
-    const results = await response.json();
-    return results.results[0].geometry.location;
   }
+    
+  const data = await response.json();
+
+  if (data.error_message) {
+    throw new Error(data.error_message);
+  }
+
+  return data.results[0].geometry.location;
 }
